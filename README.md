@@ -67,5 +67,4 @@ or, if you prefer to code your own discounts, just set the condition and discoun
 Requirements
 ----
 
-* Production - Ruby
-* Testing - Rspec
+Ruby, Rspec
