@@ -4,10 +4,10 @@ Checkout by wolas
 * Checkout functionality with a fully manageable discount system
 * each pricing_rule has a code, matched to every item to see wether it applies, the resulting items are called selected_items
 * Rules are defined by two parameters:
-  * Condition: which is a function over selected_items determining wether the discount can be applied or not. Return true or false
+  * Condition: which is a function over selected_items determining wether the discount can be applied or not. Returns true or false
   * Discount: again, a function over selected_items which determines the amount to be discounted. returns an Integer
 * Helper methods are present to provide more human like coding. These include buy_more_than_x_get_y_off_each and buy_x_get_y_free
-* The main effort has been to provide a fully customisable discount system paired with Beautiful syntax. 
+* The main effort has been to provide a fully customisable discount system paired with beautiful syntax. 
 
 
 Considerations
@@ -51,7 +51,7 @@ or, if you prefer to code your own discounts, just set the condition and discoun
     
     pricing_voucher = PricingRule.new("VOUCHER")
     
-    # you must buy more than 2 and less than 10 to get the discount
+    # you must buy more than 2 and less than 10 items to get the discount
     pricing_voucher.condition = lambda do |items|
       items.size > 2 and items.size < 10
     end
