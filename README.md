@@ -1,19 +1,19 @@
 Checkout by wolas
 =================
 
-* Checkout fucntionality with a fully manageable discount system
+* Checkout functionality with a fully manageable discount system
 * each pricing_rule has a code, matched to every item to see wether it applies, the resulting items are called selected_items
 * Rules are defined by two parameters:
-  * Condition: which is a function over selected_items determining wether the discount can be aplied or not. Return true or false
-  * Discount: again, a function over seleted_items which determines the amount to be disocunted. returns an Integer
+  * Condition: which is a function over selected_items determining wether the discount can be applied or not. Return true or false
+  * Discount: again, a function over selected_items which determines the amount to be discounted. returns an Integer
 * Helper methods are present to provide more human like coding. These include buy_more_than_x_get_y_off_each and buy_x_get_y_free
-* The main effort has been to provide a fully customizable discount system paired with beautifull syntax. 
+* The main effort has been to provide a fully customisable discount system paired with Beautiful syntax. 
 
 
 Considerations
 ----
 
-I wanted to exted the PricingRule class by allowing one instance to work on multiple codes and have multiple conditions.
+I wanted to extend the PricingRule class by allowing one instance to work on multiple codes and have multiple conditions.
 But I think that the same functionality is achieved by having multiple PricingRule instances with the same code. This
 also makes for easier understanding and using. 
 
@@ -23,7 +23,7 @@ also makes for easier understanding and using.
 ``` ruby
     voucher = Item.new("Cabify Voucher", 5, "VOUCHER")
     tshirt = Item.new("Cabify T-Shirt", 20, "TSHIRT")
-    mug = Item.new("Cafify Coffee Mug", 7.5, "MUG")
+    mug = Item.new("Cabify Coffee Mug", 7.5, "MUG")
     
     pricing_voucher = PricingRule.new("VOUCHER")
     pricing_voucher.buy_x_get_y_free 2, 1
@@ -42,12 +42,12 @@ also makes for easier understanding and using.
     checkout.total
 ```
 
-or, if you rpefer to code your own discounts, just set the condition and discount. For example:
+or, if you prefer to code your own discounts, just set the condition and discount. For example:
 
 ``` ruby
     voucher = Item.new("Cabify Voucher", 5, "VOUCHER")
     tshirt = Item.new("Cabify T-Shirt", 20, "TSHIRT")
-    mug = Item.new("Cafify Coffee Mug", 7.5, "MUG")
+    mug = Item.new("Cabify Coffee Mug", 7.5, "MUG")
     
     pricing_voucher = PricingRule.new("VOUCHER")
     
